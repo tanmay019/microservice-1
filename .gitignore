@@ -24,8 +24,9 @@ yarn-error.log*
 
 // private
 k8s-config.base64
+Dockerfile
 
 //testing
 test.js
 
-foreseeable-problems.atlan
+foreseeable-problems
