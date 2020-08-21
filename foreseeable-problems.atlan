@@ -1,0 +1,18 @@
+[ease of clustered enterprise level deployment] :
+    k8s cluster should b hardware agnostic, i.e. should dynamically add VM(s) to cluster.
+
+[Incremental remotely triggered application updates] :
+    CI/CD, when push to master, update build.
+
+[Easy remote debugging] :
+    Prolly Grafana + Prometheus.
+
+[Health Alerts and Monitoring] :
+    Prolly Grafana + Prometheus.
+
+[Application Security (with source code protection)] :
+    make build in binary.
+
+[Disaster management] :
+    have to learn something about this from Cloud, backup to someplace else e.t.c.
+
