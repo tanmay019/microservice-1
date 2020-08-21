@@ -1,0 +1,48 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: "mcr.microsoft.com/dotnet/core/aspnet:3.1"
+    steps:
+      - name: "Checkout GitHub Action"
+        uses: actions/checkout@v2
+
+      - name: "Use Node.js 10.x"
+        uses: actions/setup-node@v1
+        with:
+          node-version: "10.x"
+
+      - name: "Install Dependencies"
+        run: npm ci
+
+      - name: "Create Build Frontend"
+        run: npm run build
+
+      - name: "setup k8s inside container"
+        uses: azure/setup-kubectl@v1
+        with:
+          version: latest
+        id: install
+
+      - name: Build and push to docker hub
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+          password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+          repository: gauti019/kube-deploy
+          tags: latest
+
+      # - name: "Deploy app"
+      #   run: kubectl --kubeconfig kubefiles/config apply -f kubefiles/create-deployment.yaml
+
+      # - name: "create service and get Public IP"
+      #   run: kubectl --kubeconfig kubefiles/config apply -f kubefiles/create-service.yaml
