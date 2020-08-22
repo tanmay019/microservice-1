@@ -55,12 +55,13 @@ jobs:
       - name: Pull docker image
         run: docker pull gauti019/kube-deploy:latest
 
-      - uses: homoluctus/gitrivy@v1.0.0
+      - name: Scan container using Trivy
+        uses: homoluctus/gitrivy@v1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           image: gauti019/kube-deploy:latest
 
-      - name: Scan image
+      - name: Scan container using Anchore
         uses: anchore/scan-action@v1
         with:
           image-reference: "gauti019/kube-deploy:latest"
