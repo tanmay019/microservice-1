@@ -14,44 +14,44 @@ jobs:
       - name: "Checkout GitHub Action"
         uses: actions/checkout@v2
 
-      - name: "Use Node.js 10.x"
-        uses: actions/setup-node@v1
-        with:
-          node-version: "10.x"
+      # - name: "Use Node.js 10.x"
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: "10.x"
 
-      - name: "Install Dependencies"
-        run: npm ci
+      # - name: "Install Dependencies"
+      #   run: npm ci
 
-      - name: "Create Build Frontend"
-        run: npm run build
+      # - name: "Create Build Frontend"
+      #   run: npm run build
 
-      - name: "setup k8s inside container"
-        uses: azure/setup-kubectl@v1
-        with:
-          version: latest
-        id: install
+      # - name: "setup k8s inside container"
+      #   uses: azure/setup-kubectl@v1
+      #   with:
+      #     version: latest
+      #   id: install
 
-      - name: Build and push to docker hub
-        uses: docker/build-push-action@v1
-        with:
-          username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
-          password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
-          repository: gauti019/kube-deploy
-          tags: latest
+      # - name: Build and push to docker hub
+      #   uses: docker/build-push-action@v1
+      #   with:
+      #     username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+      #     password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+      #     repository: gauti019/kube-deploy
+      #     tags: latest
 
-      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
-        with:
-          version: "290.0.1"
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
-          export_default_credentials: true
-      - run: gcloud info
+      # - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      #   with:
+      #     version: "290.0.1"
+      #     project_id: ${{ secrets.GCP_PROJECT_ID }}
+      #     service_account_key: ${{ secrets.GCP_SA_KEY }}
+      #     export_default_credentials: true
+      # - run: gcloud info
 
-      - name: Trying out gcloud action
-        run: 'gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project test-1-286907'
+      # - name: Trying out gcloud action
+      #   run: 'gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project test-1-286907'
 
-      - name: K8s deploy stuff
-        run: kubectl apply -f kubefiles/deployment/react-deployment.yaml
+      # - name: K8s deploy stuff
+      #   run: kubectl apply -f kubefiles/deployment/react-deployment.yaml
 
-      - name: K8s create loadbalancer service
-        run: kubectl apply -f kubefiles/service/react-service.yaml
+      # - name: K8s create loadbalancer service
+      #   run: kubectl apply -f kubefiles/service/react-service.yaml
