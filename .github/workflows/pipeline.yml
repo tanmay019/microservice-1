@@ -51,7 +51,7 @@ jobs:
         run: 'gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project test-1-286907'
 
       - name: K8s deploy stuff
-        run: kubectl apply -f kubefiles/react-deployment.yaml
+        run: kubectl apply -f kubefiles/deployment/react-deployment.yaml
 
       - name: K8s create loadbalancer service
-        run: kubectl apply -f kubefiles/react-service.yaml
+        run: kubectl apply -f kubefiles/service/react-service.yaml
