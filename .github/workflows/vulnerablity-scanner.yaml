@@ -1,19 +1,19 @@
-name: Vulnerability Scan
+# name: Vulnerability Scan
 
-on:
-  schedule:
-    - cron: "39 22 * * *"
+# on:
+#   schedule:
+#     - cron: "39 22 * * *"
 
-jobs:
-  scan:
-    name: Daily Vulnerability Scan
-    runs-on: ubuntu-18.04
-    steps:
-      - name: Pull docker image
-        run: docker pull gauti019/kube-deploy
+# jobs:
+#   scan:
+#     name: Daily Vulnerability Scan
+#     runs-on: ubuntu-18.04
+#     steps:
+#       - name: Pull docker image
+#         run: docker pull gauti019/kube-deploy
 
-      - uses: homoluctus/gitrivy@v1.0.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          image: gauti019/kube-deploy
+#       - uses: homoluctus/gitrivy@v1.0.0
+#         with:
+#           token: ${{ secrets.GITHUB_TOKEN }}
+#           image: gauti019/kube-deploy
 
