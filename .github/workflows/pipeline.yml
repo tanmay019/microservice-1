@@ -48,7 +48,7 @@ jobs:
       - run: gcloud info
 
       - name: Trying out gcloud action
-        uses: 'gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project test-1-286907'
+        run: 'gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project test-1-286907'
 
       - name: K8s deploy stuff
         run: kubectl apply -f kubefiles/react-deployment.yaml
