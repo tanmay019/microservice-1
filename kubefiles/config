@@ -1,0 +1,110 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURDekNDQWZPZ0F3SUJBZ0lRQmNkVnoyZy8vZ2RicjBodnUvT296VEFOQmdrcWhraUc5dzBCQVFzRkFEQXYKTVMwd0t3WURWUVFERXlRME9ETmpPREJqTkMweFpqTmxMVFE1WWpndFlUVXlOaTFqTlRObVkyTmxORGhqTldVdwpIaGNOTWpBd09ERXhNRGd3TWpBMldoY05NalV3T0RFd01Ea3dNakEyV2pBdk1TMHdLd1lEVlFRREV5UTBPRE5qCk9EQmpOQzB4WmpObExUUTVZamd0WVRVeU5pMWpOVE5tWTJObE5EaGpOV1V3Z2dFaU1BMEdDU3FHU0liM0RRRUIKQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUUMzTjJqQnhYbHNscU0yeU1OWDEwOTlSN1V6cFZnNThHenV1Snl5UDQwdgpreEtsU3ZCL3I5R2Q0RXFhQXN3SDJEYXd4Q3hSQjgxVllXRUVGYXh3S2JPbjZtcjFXTm9UY2c5eFZtMjVWNU8yCmtWNm96M1pjSUk3K2xadGw4ZGZMWEFtYTV6V0dOQjdKWVpJVUlGZnlNYzJLSUgzV0tKUzJxeFdFVnJ2K1pMOXAKdmNpaHZDLyt6VHhSZzFNTUJOM21PMWFXTlJHRWRHb1dSbmpGaFRJRDdsT2VHNVdRV1N6WDhoOWlBc3VxeitkYwpsdXlSUk5HOHg0Z0pldUhsTElNdkV1M1FLWGw0ZDJBSFNnWE9wMEoxOWpJVmkrN0pLdi8zVW5NQWdTTHF5YXdpCnRRT292VWV2dTMrSXJ2dVgzOW1TakdWMFJTdFVFYXdudmN4cE1qS1BCcGd2QWdNQkFBR2pJekFoTUE0R0ExVWQKRHdFQi93UUVBd0lDQkRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUEwR0NTcUdTSWIzRFFFQkN3VUFBNElCQVFDeApNbkJ5VzdyM09rSC9vWnIrdnhBU3VlRG11WlNUTlVYdXBNYWR1MFRSS01yaGFMNTMyRkpGV1ZkV3lGWXVPc0xuCnNJWSt1OG9tQXFaWVpiT1JZRmJaT2t6dVhLN2ZyMUtDbWdtVU1TdWF4SElRVTBTUGMwVjZ0T0FqSFZRZWJEQ20KY0xPZUl5TTFmNXZEbWt4K0trcjJzQ0xPak85TDZIYVNhNTBpZ1ZRblNtZUR5UTIreWp2S2FGbFVsQ293d25YcQpsYjJiS2FjazJVelhwWmU5Mys4L0FkcWVGWkpmb1RRWkdTeldyK3ZKcHhKeEV1T2Z5U0FUWktESm9lQnlxUHBBCjBOcGN4TnloRjVVTVRBMytXZ29WT3k4L0s2Ui83K0RHbjY3TUMvTFI5RHNITWNIM3RIalM2S1hFMmZoNWRKcTYKL0lKZHN2RnlUZnBpc3Qvb1FJbEUKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    server: https://35.193.235.48
+  name: gke_new-k8s-experiment_us-central1-c_my-first-cluster-1
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURLakNDQWhLZ0F3SUJBZ0lRUi9sZVlHRTVGTGZ0b2NQc1h5d3VxREFOQmdrcWhraUc5dzBCQVFzRkFEQXYKTVMwd0t3WURWUVFERXlSaU0ySmtPV05rTnkxbFkyWTNMVFEwWXpVdE9UWTVPQzB3TVRjMU1ERXpaakV3T1RJdwpIaGNOTWpBd09ERTBNRGd5TVRFeFdoY05NalV3T0RFek1Ea3lNVEV4V2pBdk1TMHdLd1lEVlFRREV5UmlNMkprCk9XTmtOeTFsWTJZM0xUUTBZelV0T1RZNU9DMHdNVGMxTURFelpqRXdPVEl3Z2dFaU1BMEdDU3FHU0liM0RRRUIKQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUURaWXN0d2p3Zm5lVitycUplL25pRjk0T0VONWNPYmdOTEdYbFpxODRaYgpqRUxyNSt1L08yRjljWVJGMW5jemxwbkpzczI0ZDVEbnR1Z3NTY0FZNTc3aVM2OE82aDNoM1N5ZDdwZ01URGVFCkpkcHFqMDkvcHJXVlJmSk1CdVhFbk1hTzZCNjI1a3UzM2tKdkIxUi9RenNjVk00NDdTTWxBRWRtNHByNHpjUWMKMkJDQWxPU0F0dFdCOHI0eHhwSlhHRjBRVUtCL3RwdW5lS0pwTHM4VDc3ekJiTmVNd0MxckJMdW1QSXNWM1F4Ugpvby85d0JNbHduaVczV0Ztd2s4VmY4eU1JTUo3UUpsR1Y0RWdId3JUbWZ1MGxMM283R1lianFyU05FRWk1RG1mCmpFVEJ6RjNDUVBhUXlIckdnR2h3ZUdlZVJOUHk3U1J3UnR6MGU1ZkdVd0hUQWdNQkFBR2pRakJBTUE0R0ExVWQKRHdFQi93UUVBd0lDQkRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJUVFFzdi9aK0dSSmZjRQowL3RyS0hpbWZvaXREVEFOQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBMHg2cSt0bmFDZ3MycmsrL3RLZEM1NTBwCkZ1YXZBRHhFSEdEQlJaaFZlZ3Njb3M4alh2cXcxZW1KQUM2cTh0TEVxdnhzZ1NUWWF6dnZCZ2t0U2dlTkdENTgKaXdqbXg1RlZQdVorOUZYLzR3QzBnNmg5Y1ZjeWVDa2tzcHhmRkdNQkJ4ZFJEMDNLaGFjOHVXNWJyK28xU2NtZAplcDJNRXExVEEvVHA2aWF0bklBN3VGclRiMktLY1pibTRJWU5WS1FDTTBDT2V3MmQ2MmdjQ0lCVXNXWCtTLzFRCkN6dDlhU2Q5Ymg3SmwyOTJjQm96L3ZEblV4NzIrVy9KY0xRRjFKUUJVeHUwMm5KY3RFNEtvTGhPVGkvWHVhcmgKZmR0OHBoSFB4ZXAvUjJDSENCc095cHFrNThzcCszSUxEbFM2bTZ1cnhDVENSaVRLdXQ2L1psSGhkdEZmb3c9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://104.197.94.137
+  name: gke_k8s-experiment-2_us-central1-c_my-first-cluster-2
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURDekNDQWZPZ0F3SUJBZ0lRUzQrcVQzSlBCNUNOTDVCVlJHZElzekFOQmdrcWhraUc5dzBCQVFzRkFEQXYKTVMwd0t3WURWUVFERXlSaFpqazFabU13TXkwMFpXTTBMVFEzT0RZdE9XWTVZUzA1TW1Wa09HRmlPRFE0TTJFdwpIaGNOTWpBd09EQTVNVGt5TVRBeVdoY05NalV3T0RBNE1qQXlNVEF5V2pBdk1TMHdLd1lEVlFRREV5UmhaamsxClptTXdNeTAwWldNMExUUTNPRFl0T1dZNVlTMDVNbVZrT0dGaU9EUTRNMkV3Z2dFaU1BMEdDU3FHU0liM0RRRUIKQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUUNZTTBFVmdZZGVpZTdyTzRzZnpyVGpTZTZlVCs2V1hxWHJrUW9IeU9DUwpQZXBaK1ljRE9HeVFQNFc5L0JlS28rZGhVdTVkV1dUbFB4L3Nic05OQ0pWbllNbk10UDh4dXdybEtBYllkanZRCklKWm96RnI3cGlsemdaUFJZR1BSdjQ0bFU1L2JJbzBnUVd3MDA2bWh5VVA3UllzdVhFbkgyYmRvVHI3b05aZVUKVmk3cHN5b0pHSmJ6eEQzazAwdng1aTBXS2lEd3hXLzVyOE9WUVlBQWVaWFNyODE1OXJ0Z2s2Z0hYSjZyOFczQwpCZTk5LzBKZHdmSmhlY3pXMUhTSTFyZm92NDJkZ2Y1TXZGTlRTNjlGRUdYSFgrdXo5UlFJZDE2cWJPd3FrQTYzClVMd0Vod1E4bDBPaFhFTEVsRGJsd0VFdzhjRVVOT0NCTEN0SVJ4dXQ1VWtmQWdNQkFBR2pJekFoTUE0R0ExVWQKRHdFQi93UUVBd0lDQkRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUEwR0NTcUdTSWIzRFFFQkN3VUFBNElCQVFCNQowalgybnlIc0p6QThvUlViT0NWYVptdjdpbUVuY1RQeVhrNC9XUzdlMUZ3RUd4akd2SERxT2w0WFRyWC9lcklxClg5R2hUam4wL3lLWTQwdmxZb2JFSGNIY3A2aGxwWWdmRnRGUzQ1eWFGWkxsTnpFNHdkREVzTjU4TlRNNDRFSHgKWFkwMHVIY3FzaWhlb0szL2wyRXArMlNNY25lSHNuWGQ4Z2xVbENVV0RFQ0k1eFZsY3loUW9KTVdJOFlqMFJMRgp1bDc2YjhkVDd2QjFOTkJsMU14d1h3MDZWMFg3a1hwS0JOZmlwcWg5MmphVnIxeFdRdkxBWklJWDFXVmI1aU5PCjJwMjhlSlFiREJyeHVCLy9jSXZOM1hXK2xMZ0xYWUxPbGtMN3ZDSFkwL3hia0RRZGE3T0tHOFZuQUc5OUdEREcKZ2c5Ky9ha2c0YnVYMjF2RDc0VFkKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    server: https://35.232.73.24
+  name: gke_my-project-1560794018868_us-central1-c_cluster-1
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURLakNDQWhLZ0F3SUJBZ0lRSXBPTEtGQmVzOWZqVjljcjlhZUdrVEFOQmdrcWhraUc5dzBCQVFzRkFEQXYKTVMwd0t3WURWUVFERXlRNU5qaGxORE5sTmkxa1l6aG1MVFJqWlRBdE9EbGtOaTA0WlRrM05USXdNVGhpTTJZdwpIaGNOTWpBd09ESXlNREEwTXpRMVdoY05NalV3T0RJeE1ERTBNelExV2pBdk1TMHdLd1lEVlFRREV5UTVOamhsCk5ETmxOaTFrWXpobUxUUmpaVEF0T0Rsa05pMDRaVGszTlRJd01UaGlNMll3Z2dFaU1BMEdDU3FHU0liM0RRRUIKQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUUM2ajgrakUyZGZvS29GaGFBelNlQlFqcXl4OWp1VlFUTEVpMGVVd2lhbwovNW1Fak1DMzhlMG1VcEFCK1VBMENtY1pwZ25vMnJORU45SnNEY0YzYy9IOGhwcyszSmNxclZLUUppa3ZDczFMCnFGMGJrWitFbVFHV1Bia1NmVlRiYW03dVpkOXUxT3oxa2pVREx6MWpBUWhVWFVPNUE2akhOeU5JdlJiS1ZMMG0KVE9pQy9MdHYwM1dadHVvV3BERlZCN0hjb1BQRFZCdlFGTndpRFhrMmRxTEdPNG5yNEg4b3FxNFU2Q21xZUlpYwpQVTlZMGM3dk1McUdaeFJwTkVDUEFyaWtIblVvbEUzOEx0NlVnZmdXQVF3dkloelNTbDVaSy8zRXdiV1p0OW4rCmdjTk9FbmZGTVd3ZEhKclFPMjNIOTBCYlRZMXpWWVFFbUI3K0RlR2kvWlE1QWdNQkFBR2pRakJBTUE0R0ExVWQKRHdFQi93UUVBd0lDQkRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJUSmNTR1BaUU1EZmFCbgorYktCM3hOTnZvWDNVekFOQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBV29MZDdaemYwOWlXcVlaRWJkOVdPN1hICkZ1NXBJYUVrS01iZ0NDVDV1Q2ptS1ZvcjBndjJUVmMwZ09aNURZc283TGJsN3lGM1krL0JjblQ1aWRWVVUxMHgKNytLNkVsVGVXRmd4cDloM0g2UzdmYjgvSlNEMllNZHljc3c0SStPb2gwdGNhdGNMbnd3V01jZ0pVcU0yU1Y5UQpQTUhMc2tON3RINVhhb2xTWTVoMEVFMmpaWk1xWUI3TzltdStuK0hOakZDcVQrWUNVZmROYmhlOHVIRmsyZlFvCnFNQzNDMGdrTEs2UXZwMEk1U0NpYlJJZzBLN0lhZ3VyUVZjWE93TGdEdy9xUHpXZFlUTVFma2VXQkUxSk01RlQKMVNJaytLNVZpR0tlandvZ0hzYVpsbExjSktpZ09UQngvcUZvQ3hFbnZub0c5SThRMGRqUnNxUVJhbXhmcmc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://35.194.1.52
+  name: gke_test-1-286907_us-central1-c_cluster-1
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURLekNDQWhPZ0F3SUJBZ0lSQUppQi9zbXJ0cEFRNnVhRnBRUWJlZEF3RFFZSktvWklodmNOQVFFTEJRQXcKTHpFdE1Dc0dBMVVFQXhNa05tTTJOMkV5TjJZdFkyWTBPQzAwTjJJNUxUaGhZMlV0T0RJNU56UmxZelkzWlRWbQpNQjRYRFRJd01EZ3hNekU0TlRNMU1sb1hEVEkxTURneE1qRTVOVE0xTWxvd0x6RXRNQ3NHQTFVRUF4TWtObU0yCk4yRXlOMll0WTJZME9DMDBOMkk1TFRoaFkyVXRPREk1TnpSbFl6WTNaVFZtTUlJQklqQU5CZ2txaGtpRzl3MEIKQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBdXpTbmVkM1ZxcmtmUGp1c2VhMGhPN2h0N1FNaUNWanlnL2Vnc0hZSwpPVHFsTjhJS3lXMGpsNWJUMVJEODRnNkIvT05SSEcvUTlZNVZyWmpoY0xQYlFpV3Fyb2duazBBUzJaaDVKcWhBClVQRUVkWE9yTlFIRTZTQ0dyWHRzWXBsTVMzajNMYWN4UUUraGxyZTg5SUcrTTBpRGhVdjRkcm0wMnBBTjVXWTMKMENYaVphajY0dlVEdG91Qm9RSHFFUGJ5eWRRa1RuZWRoVHIwNnFQZE10dkl0dHRNbnRDVll6MUVVT2s4T3czSQpMVkVPVmJMQ3hKSlJIYjg2elM5MDdZbVNKVWt1Wm1sWmQxdkNZMkVVV2MzeHVGM1RvaU9rZzdDYU5tVG1RaEpCCnRHUktqdnBtTkVUdDhRSkg3dThwemtwTTJvaDdEYUxkdXVZdTZnS0d6Ris5RVFJREFRQUJvMEl3UURBT0JnTlYKSFE4QkFmOEVCQU1DQWdRd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBZEJnTlZIUTRFRmdRVW43dFRQalZzMVJNTgpZdkRwNmtnTWZwQUVjbkV3RFFZSktvWklodmNOQVFFTEJRQURnZ0VCQURJS0NSMHl0UytnS1JFQ1c4ZGIyVkF1CnAybHV3TzdYb1FSUkNMN091dVNHK09STE1aL3VGZHhjTE5pSGxkQzJlQTFYZXllM3BxeUtWN1IvRWw3MHFJbDcKdm91QUtsczFpOWo5a1lwQWEvMmw3bU82b3REamdIUzVEUFAycHZpSm9FOXVJU3hIQ2VtQWN3bjVCLy9haUVIKwpyUlRhNVJPZTE4SjVKZ1p4dnFOMk9sWFhJVXhkOWE1dEZtZ2MwajIzRkhQVmdYNU9uRmZ2cUNLV05MZUpYYUpoCjBTbG9QY0ExRjRtbG5PUHE5NWI4blJmVGZIUFE5UHdUSmUxbEJqMjV5WTk0QnpLai85NS9Za2g1MTFNRDBmUnYKSlo1VHp1NlN4TUhteFk4d3RCU05FV3hRa1lrUFdNdDdTa1F2TDd5OWRTU04yNVRCVmdhNTMxU25tcU01TW0wPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://35.232.225.9
+  name: gke_k8s-experiment-2_us-central1-c_my-first-cluster-1
+- cluster:
+    certificate-authority: /home/a/.minikube/ca.crt
+    server: https://172.17.0.2:8443
+  name: minikube
+contexts:
+- context:
+    cluster: gke_new-k8s-experiment_us-central1-c_my-first-cluster-1
+    user: gke_new-k8s-experiment_us-central1-c_my-first-cluster-1
+  name: gke_new-k8s-experiment_us-central1-c_my-first-cluster-1
+- context:
+    cluster: gke_k8s-experiment-2_us-central1-c_my-first-cluster-2
+    user: gke_k8s-experiment-2_us-central1-c_my-first-cluster-2
+  name: gke_k8s-experiment-2_us-central1-c_my-first-cluster-2
+- context:
+    cluster: gke_my-project-1560794018868_us-central1-c_cluster-1
+    user: gke_my-project-1560794018868_us-central1-c_cluster-1
+  name: gke_my-project-1560794018868_us-central1-c_cluster-1
+- context:
+    cluster: gke_test-1-286907_us-central1-c_cluster-1
+    user: gke_test-1-286907_us-central1-c_cluster-1
+  name: gke_test-1-286907_us-central1-c_cluster-1
+- context:
+    cluster: gke_k8s-experiment-2_us-central1-c_my-first-cluster-1
+    user: gke_k8s-experiment-2_us-central1-c_my-first-cluster-1
+  name: gke_k8s-experiment-2_us-central1-c_my-first-cluster-1
+- context:
+    cluster: minikube
+    user: minikube
+  name: minikube
+current-context: gke_test-1-286907_us-central1-c_cluster-1
+kind: Config
+preferences: {}
+users:
+- name: gke_new-k8s-experiment_us-central1-c_my-first-cluster-1
+  user:
+    auth-provider:
+      config:
+        access-token: ya29.a0AfH6SMCLYjPzTbOR_oEnE0V8Gxyt3LwlAJaqCa5loyQMx3xWQ-Fod74nvGE3Ku4mL63oO0mYFdjd4NerkPpJ1AZQbtDWStkYNbjYE5jBXPHKSpvuJpmGF2hjwEPFEZcYvd1lxN6pTvN3D0ZDJbt92BhLYGyKfq8VRtcH-Jv3rI54
+        cmd-args: config config-helper --format=json
+        cmd-path: /snap/google-cloud-sdk/144/bin/gcloud
+        expiry: '2020-08-12T18:06:52Z'
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp
+- name: gke_k8s-experiment-2_us-central1-c_my-first-cluster-2
+  user:
+    auth-provider:
+      config:
+        access-token: ya29.a0AfH6SMBi__rfHXaisesrGNCUBXN2H8ZiOWdLW4Y0mGIstEku0OpfO4xWVMGdSpFDPVShn_xv285vCoaM7obW7B371DIFHJ2a7OoZlZWQUAwWp1-IXqqurNgwo6FoNvk67ADpkPSPvYvXMslaG7iXwtXjbGx1gh5dwADvdNmPztgF
+        cmd-args: config config-helper --format=json
+        cmd-path: /snap/google-cloud-sdk/145/bin/gcloud
+        expiry: '2020-08-14T12:24:29Z'
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp
+- name: gke_my-project-1560794018868_us-central1-c_cluster-1
+  user:
+    auth-provider:
+      config:
+        access-token: ya29.a0AfH6SMBvUxZiep-H8dJPj2HtldLaaRrYD67BSd_a3YKCrxp1ziqULBZz56-wa0tbNEo94I7CqSVDsT5Ba0BQrDMQaV_290AIkqGPscZ_4n9uSecxfCLQNmlJIHyYSTi7M71feF91g_4AizwDZwDQUTI74Je-HhmrWW9Wv2zJ968
+        cmd-args: config config-helper --format=json
+        cmd-path: /snap/google-cloud-sdk/144/bin/gcloud
+        expiry: '2020-08-09T21:20:16Z'
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp
+- name: gke_test-1-286907_us-central1-c_cluster-1
+  user:
+    auth-provider:
+      config:
+        cmd-args: config config-helper --format=json
+        cmd-path: /snap/google-cloud-sdk/146/bin/gcloud
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp
+- name: gke_k8s-experiment-2_us-central1-c_my-first-cluster-1
+  user:
+    auth-provider:
+      config:
+        cmd-args: config config-helper --format=json
+        cmd-path: /snap/google-cloud-sdk/145/bin/gcloud
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp
+- name: minikube
+  user:
+    client-certificate: /home/a/.minikube/profiles/minikube/client.crt
+    client-key: /home/a/.minikube/profiles/minikube/client.key

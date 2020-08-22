@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-deploy
+  labels:
+    app: react
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: react
+  template:
+    metadata:
+      labels:
+        app: react
+    spec:
+      containers:
+        - name: kube
+          image: gauti019/kube-deploy:latest
+          ports:
+            - containerPort: 3030
+ 

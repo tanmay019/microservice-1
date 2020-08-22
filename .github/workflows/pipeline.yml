@@ -41,8 +41,5 @@ jobs:
           repository: gauti019/kube-deploy
           tags: latest
 
-      # - name: "Deploy app"
-      #   run: kubectl --kubeconfig kubefiles/config apply -f kubefiles/create-deployment.yaml
-
-      # - name: "create service and get Public IP"
-      #   run: kubectl --kubeconfig kubefiles/config apply -f kubefiles/create-service.yaml
+      - name: "Deploy app"
+        run: kubectl --kubeconfig kubefiles/config apply -f kubefiles/react-deployment.yaml
