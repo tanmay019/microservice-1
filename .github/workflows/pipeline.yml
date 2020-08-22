@@ -24,12 +24,15 @@ jobs:
 
       - name: "Create Build Frontend"
         run: npm run build
+        
+      - name: testing if node-fetch exists
+        run: ls node_modules | grep 'node-fetch'
 
-      - name: "setup k8s inside container"
-        uses: azure/setup-kubectl@v1
-        with:
-          version: latest
-        id: install
+      # - name: "setup k8s inside container"
+      #   uses: azure/setup-kubectl@v1
+      #   with:
+      #     version: latest
+      #   id: install
 
       - name: Build and push to docker hub
         uses: docker/build-push-action@v1
@@ -39,16 +42,16 @@ jobs:
           repository: gauti019/kube-deploy
           tags: latest
 
-      # - name: "Deploy app"
-      #   run: kubectl --kubeconfig kubefiles/config apply -f kubefiles/react-deployment.yaml
-
-      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
-        with:
-          version: "290.0.1"
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
-          export_default_credentials: true
-      - run: gcloud info
+      # - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      #   with:
+      #     version: "290.0.1"
+      #     project_id: ${{ secrets.GCP_PROJECT_ID }}
+      #     service_account_key: ${{ secrets.GCP_SA_KEY }}
+      #     export_default_credentials: true
+      # - run: gcloud info
 
       # - name: Trying out gcloud action
-      #   uses: gcloud container clusters get-credentials cluster-1 --zone us-central1-c --project test-1-286907
+      #   uses: gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project test-1-286907
+
+      # - name: K8s deploy stuff
+      #   run: kubectl apply -f kubefiles/react-deployment.yaml
