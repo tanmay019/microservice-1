@@ -5,12 +5,12 @@ kubeFiles=$baseDir/kubefiles
 
 # echo $baseDir/kubefiles
 cd $kubeFiles
-ks apply -f ./deployment/log-deployment.yaml &&
-ks apply -f ./deployment/nginx-controller.yaml &&
-ks apply -f ./deployment/react-deployment.yaml
+kubectl apply -f ./deployment/log-deployment.yaml &&
+kubectl apply -f ./deployment/nginx-controller.yaml &&
+kubectl apply -f ./deployment/react-deployment.yaml
 
-ks apply -f ./service/log-service.yaml &&
-ks apply -f ./service/nginx-service.yaml &&
-ks apply -f ./service/react-service.yaml
+kubectl apply -f ./service/log-service.yaml &&
+kubectl apply -f ./service/nginx-service.yaml &&
+kubectl apply -f ./service/react-service.yaml
 
-ks apply -f ./ingress/ingress.yaml
+kubectl apply -f ./ingress/ingress.yaml
