@@ -11,7 +11,7 @@ class Clock extends Component {
             date: new Date(),
             isDateVisible: true
         };
-        
+        console.log('did we reach @ console');
         this.toggleDate = this.toggleDate.bind(this);
     }
 
@@ -41,6 +41,7 @@ class Clock extends Component {
     }
 
     render() {
+        console.log('we reached here ?');
         return (
             <div>
                 <Panel toggleDate={this.toggleDate} dateOn={this.state.isDateVisible} />

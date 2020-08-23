@@ -29,9 +29,9 @@ const server = http.createServer(function (req, res) {
       console.log(1, "Logging Unsuccesful @", url, req.url, new Date());
       console.log(2, "Error and data is", err, data, new Date());
       res.writeHead(200);
-      return res.end("Unextpected shit occoured");
+      return res.end("Unextpected shit occoured with url: ", req.url);
     }
-    console.log(34, dir+url, data);
+    console.log(34, dir + url, data.toString());
     res.writeHead(200);
     return res.end(data);
   });
