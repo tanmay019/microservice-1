@@ -3,7 +3,6 @@
 baseDir=$(echo $(pwd))
 kubeFiles=$baseDir/kubefiles
 
-# echo $baseDir/kubefiles
 cd $kubeFiles
 kubectl apply -f ./deployment/log-deployment.yaml &&
 kubectl apply -f ./deployment/nginx-controller.yaml &&
