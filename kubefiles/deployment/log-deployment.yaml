@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: react-deploy
+  name: log-deploy
   labels:
     app: react
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: react
+      app: log
   template:
     metadata:
       labels:
-        app: react
+        app: log
     spec:
       containers:
         - name: kube
-          image: gauti019/kube-deploy:latest
+          image: gauti019/logger-microservice:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 3030
+            - containerPort: 3099

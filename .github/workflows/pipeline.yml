@@ -40,19 +40,20 @@ jobs:
           repository: gauti019/kube-deploy
           tags: latest
 
-      # - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
-      #   with:
-      #     version: "290.0.1"
-      #     project_id: ${{ secrets.GCP_PROJECT_ID }}
-      #     service_account_key: ${{ secrets.GCP_SA_KEY }}
-      #     export_default_credentials: true
-      # - run: "gcloud container clusters get-credentials my-first-cluster-2 --zone us-central1-c --project test-1-286907"
+      - name: Setup & install Google-Cloud-Platform
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: "290.0.1"
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+      - run: "gcloud container clusters get-credentials my-first-cluster-2 --zone us-central1-c --project test-1-286907"
 
       # - name: Trying out gcloud action
       #   run: "gcloud container clusters get-credentials my-first-cluster-2 --zone us-central1-c --project test-1-286907"
 
-      # - name: K8s deploy stuff
-      #   run: ./deploy.sh
+      - name: K8s deploy stuff
+        run: ./kubefiles/deploy-to-k8s.sh
 
       # - name: K8s deploy stuff
       #   run: kubectl apply -f kubefiles/deployment/react-deployment.yaml
