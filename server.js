@@ -18,7 +18,12 @@ const server = http.createServer(function (req, res) {
   //   return res.end("Unextpected shit occoured");
   // }
 
-  if (url === '/react')      url=index;
+  console.log(21, url, req.url);
+  if (url === '/react') {
+    console.log(23, url, req.url);
+    url=index;
+  }
+  console.log(26, url, req.url);
   fs.readFile( dir + url, function (err, data) {
     if (err) {
       console.log(1 ,"Logging Unsuccesful @", url, req.url, new Date());
