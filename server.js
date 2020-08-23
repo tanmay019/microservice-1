@@ -30,12 +30,12 @@ const server = http.createServer(function (req, res) {
       console.log(1, "Logging Unsuccesful @", url, req.url, new Date());
       console.log(2, "Error and data is", err, data, new Date());
       res.writeHead(200);
-      return res.end("Unextpected shit occoured with url: ", req.url);
+      res.end("Unextpected shit occoured with url: "+req.url);
     }
 
-    console.log(34, dir + url, data.toString());
+    console.log(34, dir + url, data);
     res.writeHead(200);
-    return res.end(data);
+    res.end(data);
   });
 });
 
