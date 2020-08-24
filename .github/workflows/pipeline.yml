@@ -49,9 +49,6 @@ jobs:
           export_default_credentials: true
       - run: "gcloud container clusters get-credentials my-first-cluster-2 --zone us-central1-c --project test-1-286907"
 
-      # - name: Trying out gcloud action
-      #   run: "gcloud container clusters get-credentials my-first-cluster-2 --zone us-central1-c --project test-1-286907"
-
       - name: K8s deploy stuff
         run: ./kubefiles/deploy-to-k8s.sh
 
