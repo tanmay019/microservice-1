@@ -49,8 +49,11 @@ jobs:
           export_default_credentials: true
       - run: "gcloud container clusters get-credentials my-first-cluster-4 --zone us-central1-c --project test-1-286907"
 
-      - name: Debug stuff
-        run: gcloud config get-value account
+      - name: Debug stuff 1
+        run: "gcloud config get-value account"
+
+      - name: Debug stuff 2
+        run: "echo ${{ secrets.GCP_ACCOUNT_OWNER }}"
 
       - name: K8s setup Ingress in G.Cloud
         run: "kubectl create clusterrolebinding cluster-admin-binding \
