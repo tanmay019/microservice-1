@@ -47,7 +47,12 @@ jobs:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
-      - run: "gcloud container clusters get-credentials my-first-cluster-3 --zone us-central1-c --project test-1-286907"
+      - run: "gcloud container clusters get-credentials my-first-cluster-4 --zone us-central1-c --project test-1-286907"
+
+      - name: K8s setup Ingress in G.Cloud
+        run: "kubectl create clusterrolebinding cluster-admin-binding \
+          --clusterrole cluster-admin \
+          --user $(gcloud config get-value account)"
 
       - name: K8s setup Ingress in G.Cloud
         run: kubectl apply -f kubefiles/ingress/net-ingress.yaml
@@ -57,7 +62,7 @@ jobs:
 
       # - name: K8s create loadbalancer service
       #   run: kubectl apply -f kubefiles/service/react-service.yaml
-        
+
   # ----------------------------------------------------
   # uncomment when really necessary [scan takes 5-6 mins]
   # scan:
