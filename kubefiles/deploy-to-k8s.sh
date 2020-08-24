@@ -5,9 +5,10 @@
 baseDir=$(echo $(pwd))
 kubeFiles=$baseDir/kubefiles
 
+cd $kubeFiles
+
 kubectl apply -f ./ingress/net-ingress.yaml
 
-cd $kubeFiles
 kubectl apply -f ./deployment/log-deployment.yaml &&
 kubectl apply -f ./deployment/nginx-controller.yaml &&
 kubectl apply -f ./deployment/react-deployment.yaml
