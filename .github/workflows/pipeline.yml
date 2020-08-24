@@ -20,25 +20,25 @@ jobs:
         with:
           node-version: "10.x"
 
-      - name: "Install Dependencies"
-        run: npm ci
+      # - name: "Install Dependencies"
+      #   run: npm ci
 
-      - name: "Create Build Frontend"
-        run: npm run build
+      # - name: "Create Build Frontend"
+      #   run: npm run build
 
-      - name: "setup k8s inside container"
-        uses: azure/setup-kubectl@v1
-        with:
-          version: latest
-        id: install
+      # - name: "setup k8s inside container"
+      #   uses: azure/setup-kubectl@v1
+      #   with:
+      #     version: latest
+      #   id: install
 
-      - name: Build and push to docker hub
-        uses: docker/build-push-action@v1
-        with:
-          username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
-          password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
-          repository: gauti019/kube-deploy
-          tags: latest
+      # - name: Build and push to docker hub
+      #   uses: docker/build-push-action@v1
+      #   with:
+      #     username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+      #     password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+      #     repository: gauti019/kube-deploy
+      #     tags: latest
 
       - name: Setup & install Google-Cloud-Platform
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
@@ -49,11 +49,11 @@ jobs:
           export_default_credentials: true
       - run: "gcloud container clusters get-credentials my-first-cluster-3 --zone us-central1-c --project test-1-286907"
 
+      - name: K8s setup Ingress in G.Cloud
+        run: kubectl apply -f kubefiles/ingress/net-ingress.yaml
+
       - name: K8s deploy stuff
         run: ./kubefiles/deploy-to-k8s.sh
-
-      # - name: K8s deploy stuff
-      #   run: kubectl apply -f kubefiles/deployment/react-deployment.yaml
 
       # - name: K8s create loadbalancer service
       #   run: kubectl apply -f kubefiles/service/react-service.yaml

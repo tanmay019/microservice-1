@@ -7,7 +7,7 @@ kubeFiles=$baseDir/kubefiles
 
 cd $kubeFiles
 
-kubectl apply -f ./ingress/net-ingress.yaml
+# kubectl apply -f ./ingress/net-ingress.yaml
 
 kubectl apply -f ./deployment/log-deployment.yaml &&
 kubectl apply -f ./deployment/nginx-controller.yaml &&
