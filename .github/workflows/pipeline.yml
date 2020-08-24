@@ -58,6 +58,7 @@ jobs:
       - name: Setting up ingress
         run: kubectl apply -f kubefiles/ingress/net-ingress.yaml
 
+
       - name: K8s deploy stuff
         run: ./kubefiles/deploy-to-k8s.sh
 
