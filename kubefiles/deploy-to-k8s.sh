@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # kubectl create clusterrolebinding cluster-admin-binding --clusterrole cluster-admin --user $(gcloud config get-value account)
-kubectl apply -f ./ingress/net-ingress.yaml
 
 baseDir=$(echo $(pwd))
 kubeFiles=$baseDir/kubefiles
+
+kubectl apply -f ./ingress/net-ingress.yaml
 
 cd $kubeFiles
 kubectl apply -f ./deployment/log-deployment.yaml &&
