@@ -50,10 +50,10 @@ jobs:
       - run: "gcloud container clusters get-credentials my-first-cluster-5 --zone us-central1-c --project test-1-286907"
 
       # don't think GCP will allow this using service account
-      - name: K8s updating clusterRole G.Cloud
-        run: "kubectl create clusterrolebinding cluster-admin-binding \
-          --clusterrole cluster-admin \
-          --user $(gcloud config get-value account)"
+      # - name: K8s updating clusterRole G.Cloud
+      #   run: "kubectl create clusterrolebinding cluster-admin-binding \
+      #     --clusterrole cluster-admin \
+      #     --user $(gcloud config get-value account)"
 
       - name: Setting up ingress
         run: kubectl apply -f kubefiles/ingress/net-ingress.yaml
