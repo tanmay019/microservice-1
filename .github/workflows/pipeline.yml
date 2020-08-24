@@ -49,19 +49,14 @@ jobs:
           export_default_credentials: true
       - run: "gcloud container clusters get-credentials my-first-cluster-4 --zone us-central1-c --project test-1-286907"
 
-      - name: Debug stuff 1
-        run: "gcloud config get-value account"
+      # don't think GCP will allow this using service account
+      # - name: K8s setup Ingress in G.Cloud
+      #   run: "kubectl create clusterrolebinding cluster-admin-binding \
+      #     --clusterrole cluster-admin \
+      #     --user ${{ secrets.GCP_ACCOUNT_OWNER }}"
 
-      - name: Debug stuff 2
-        run: "echo ${{ secrets.GCP_ACCOUNT_OWNER }}"
-
-      - name: K8s setup Ingress in G.Cloud
-        run: "kubectl create clusterrolebinding cluster-admin-binding \
-          --clusterrole cluster-admin \
-          --user ${{ secrets.GCP_ACCOUNT_OWNER }}"
-
-      - name: K8s setup Ingress in G.Cloud
-        run: kubectl apply -f kubefiles/ingress/net-ingress.yaml
+      # - name: K8s setup Ingress in G.Cloud
+      #   run: kubectl apply -f kubefiles/ingress/net-ingress.yaml
 
       - name: K8s deploy stuff
         run: ./kubefiles/deploy-to-k8s.sh
