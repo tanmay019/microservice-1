@@ -49,6 +49,7 @@ jobs:
           export_default_credentials: true
       - run: "gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project tranquil-apogee-287511"
 
+
       # don't think GCP will allow this using service account
       # - name: K8s updating clusterRole G.Cloud
       #   run: "kubectl create clusterrolebinding cluster-admin-binding \
