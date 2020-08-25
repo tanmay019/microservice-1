@@ -15,30 +15,30 @@ jobs:
       - name: "Checkout GitHub Action"
         uses: actions/checkout@v2
 
-      # - name: "Use Node.js 10.x"
-      #   uses: actions/setup-node@v1
-      #   with:
-      #     node-version: "10.x"
+      - name: "Use Node.js 10.x"
+        uses: actions/setup-node@v1
+        with:
+          node-version: "10.x"
 
-      # - name: "Install Dependencies"
-      #   run: npm ci
+      - name: "Install Dependencies"
+        run: npm ci
 
-      # - name: "Create Build Frontend"
-      #   run: npm run build
+      - name: "Create Build Frontend"
+        run: npm run build
 
-      # - name: "setup k8s inside container"
-      #   uses: azure/setup-kubectl@v1
-      #   with:
-      #     version: latest
-      #   id: install
+      - name: "setup k8s inside container"
+        uses: azure/setup-kubectl@v1
+        with:
+          version: latest
+        id: install
 
-      # - name: Build and push to docker hub
-      #   uses: docker/build-push-action@v1
-      #   with:
-      #     username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
-      #     password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
-      #     repository: gauti019/kube-deploy
-      #     tags: latest
+      - name: Build and push to docker hub
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+          password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+          repository: gauti019/kube-deploy
+          tags: latest
 
       - name: Setup & install Google-Cloud-Platform
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
@@ -54,10 +54,8 @@ jobs:
       #   run: "kubectl create clusterrolebinding cluster-admin-binding \
       #     --clusterrole cluster-admin \
       #     --user $(gcloud config get-value account)"
-
-      - name: Setting up ingress
-        run: kubectl apply -f kubefiles/ingress/net-ingress.yaml
-
+      # - name: Setting up ingress
+      #   run: kubectl apply -f kubefiles/ingress/net-ingress.yaml
 
       - name: K8s deploy stuff
         run: ./kubefiles/deploy-to-k8s.sh
