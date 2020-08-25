@@ -47,7 +47,7 @@ jobs:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
-      - run: "gcloud container clusters get-credentials my-first-cluster-5 --zone us-central1-c --project test-1-286907"
+      - run: "gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project tranquil-apogee-287511"
 
       # don't think GCP will allow this using service account
       # - name: K8s updating clusterRole G.Cloud
