@@ -58,7 +58,7 @@ const server = http.createServer(function (req, res) {
   .:::::::: .::      .:: .::      .::     .::::      .::      .::              .::       .:::            .::   
                                                                                                                  `;
 
-  if (url.substr(0,6) === "/react") {
+  if (url.split('/')[1] === "/react") {
     res.writeHead(200);
     return res.end(ms1);
   }
