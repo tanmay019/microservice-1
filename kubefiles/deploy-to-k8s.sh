@@ -9,6 +9,9 @@ kubeFiles=$baseDir/kubefiles
 
 cd $kubeFiles
 
+ks delete service/react
+ks delete deployment.apps/react-deploy
+
 helm install $releaseVersion ./mychart
 
 # # kubectl apply -f ./ingress/net-ingress.yaml
