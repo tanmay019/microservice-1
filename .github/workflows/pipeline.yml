@@ -64,7 +64,7 @@ jobs:
           version: "v3.3.0"
 
       - name: K8s delete old services
-        run: "ks delete svc/react && kubectl delete deployment.apps/react-deploy"
+        run: "kubectl delete svc/react && kubectl delete deployment.apps/react-deploy"
 
       - name: K8s deploy stuff
         run: "./kubefiles/deploy-to-k8s.sh ${{ github.sha }}"
