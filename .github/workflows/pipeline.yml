@@ -49,7 +49,6 @@ jobs:
           export_default_credentials: true
       - run: "gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project tranquil-apogee-287511"
 
-
       # don't think GCP will allow this using service account
       # - name: K8s updating clusterRole G.Cloud
       #   run: "kubectl create clusterrolebinding cluster-admin-binding \
@@ -64,7 +63,7 @@ jobs:
           version: "v3.3.0"
 
       - name: K8s delete old services
-        run: "kubectl delete svc/react && kubectl delete deployment.apps/react-deploy"
+        run: "kubectl delete svc/react --ignore-not-found && kubectl delete deployment.apps/react-deploy --ignore-not-found"
 
       - name: K8s deploy stuff
         run: "./kubefiles/deploy-to-k8s.sh ${{ github.sha }}"
