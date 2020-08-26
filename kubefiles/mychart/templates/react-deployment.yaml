@@ -4,9 +4,8 @@ metadata:
   name: react-deploy
   labels:
     app: react
-    helm.sh/chart: '{{ .Values.label }}'
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicas.react }}
   selector:
     matchLabels:
       app: react
@@ -17,7 +16,7 @@ spec:
     spec:
       containers:
         - name: kube
-          image: gauti019/kube-deploy:latest
+          image: gauti019/kube-deploy:{{ .Release.Name }}
           imagePullPolicy: Always
           ports:
-            - containerPort: 3030
+            - containerPort: {{ .Values.containerPorts.react }}

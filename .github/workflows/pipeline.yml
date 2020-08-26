@@ -38,7 +38,7 @@ jobs:
           username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
           password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
           repository: gauti019/kube-deploy
-          tags: latest
+          tags: ${{ github.sha }}
 
       - name: Setup & install Google-Cloud-Platform
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
@@ -49,7 +49,6 @@ jobs:
           export_default_credentials: true
       - run: "gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project tranquil-apogee-287511"
 
-
       # don't think GCP will allow this using service account
       # - name: K8s updating clusterRole G.Cloud
       #   run: "kubectl create clusterrolebinding cluster-admin-binding \
@@ -58,8 +57,14 @@ jobs:
       # - name: Setting up ingress
       #   run: kubectl apply -f kubefiles/ingress/net-ingress.yaml
 
+      - name: Install Helm package manager
+        uses: azure/setup-helm@v1
+        with:
+          version: "v3.3.0"
+        id: install
+
       - name: K8s deploy stuff
-        run: ./kubefiles/deploy-to-k8s.sh
+        run: "./kubefiles/deploy-to-k8s.sh ${{ github.sha }}"
 
   # ----------------------------------------------------
   # uncomment when really necessary [scan takes 5-6 mins]
