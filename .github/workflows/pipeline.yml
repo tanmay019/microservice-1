@@ -20,11 +20,11 @@ jobs:
         with:
           node-version: "10.x"
 
-      - name: "Install Dependencies"
-        run: npm ci
+      # - name: "Install Dependencies"
+      #   run: npm ci
 
-      - name: "Create Build Frontend"
-        run: npm run build
+      # - name: "Create Build Frontend"
+      #   run: npm run build
 
       - name: Build and push to docker hub
         uses: docker/build-push-action@v1
@@ -49,6 +49,7 @@ jobs:
           export_default_credentials: true
       - run: "gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project tranquil-apogee-287511"
 
+
       # don't think GCP will allow this using service account
       # - name: K8s updating clusterRole G.Cloud
       #   run: "kubectl create clusterrolebinding cluster-admin-binding \
@@ -61,6 +62,9 @@ jobs:
         uses: azure/setup-helm@v1
         with:
           version: "v3.3.0"
+
+      - name: K8s delete old services
+        run: "ks delete svc/react && kubectl delete deployment.apps/react-deploy"
 
       - name: K8s deploy stuff
         run: "./kubefiles/deploy-to-k8s.sh ${{ github.sha }}"
