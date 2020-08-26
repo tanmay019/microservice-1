@@ -26,12 +26,6 @@ jobs:
       - name: "Create Build Frontend"
         run: npm run build
 
-      - name: "setup k8s inside container"
-        uses: azure/setup-kubectl@v1
-        with:
-          version: latest
-        id: install
-
       - name: Build and push to docker hub
         uses: docker/build-push-action@v1
         with:
@@ -39,6 +33,12 @@ jobs:
           password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
           repository: gauti019/kube-deploy
           tags: ${{ github.sha }}
+
+      - name: "setup k8s inside container"
+        uses: azure/setup-kubectl@v1
+        with:
+          version: latest
+        id: install
 
       - name: Setup & install Google-Cloud-Platform
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master

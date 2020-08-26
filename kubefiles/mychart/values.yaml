@@ -10,7 +10,7 @@ containerPorts:
   log: 3099
 
 replicas:
-  react: 2
+  react: 1
   log: 1
 
 
