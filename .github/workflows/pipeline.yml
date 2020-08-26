@@ -61,7 +61,6 @@ jobs:
         uses: azure/setup-helm@v1
         with:
           version: "v3.3.0"
-        id: install
 
       - name: K8s deploy stuff
         run: "./kubefiles/deploy-to-k8s.sh ${{ github.sha }}"
