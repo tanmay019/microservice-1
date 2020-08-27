@@ -20,11 +20,11 @@ jobs:
         with:
           node-version: "10.x"
 
-      - name: "Install Dependencies"
-        run: npm ci
+      # - name: "Install Dependencies"
+      #   run: npm ci
 
-      - name: "Create Build Frontend"
-        run: npm run build
+      # - name: "Create Build Frontend"
+      #   run: npm run build
 
       - name: Build and push to docker hub
         uses: docker/build-push-action@v1
@@ -47,7 +47,7 @@ jobs:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
-      - run: "gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project tranquil-apogee-287511"
+      - run: "gcloud container clusters get-credentials my-first-cluster-2 --zone us-central1-c --project tranquil-apogee-287511"
 
       # don't think GCP will allow this using service account
       # - name: K8s updating clusterRole G.Cloud
