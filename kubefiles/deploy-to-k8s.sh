@@ -9,19 +9,19 @@ kubeFiles=$baseDir/kubefiles
 
 cd $kubeFiles
 
-ks delete service/react
-ks delete deployment.apps/react-deploy
+# kubectl delete service/react
+# kubectl delete deployment.apps/react-deploy
 
-helm install $releaseVersion ./mychart
+# helm install $releaseVersion ./mychart
 
-# # kubectl apply -f ./ingress/net-ingress.yaml
+# kubectl apply -f ./ingress/net-ingress.yaml
 
-# kubectl apply -f ./deployment/log-deployment.yaml &&
-# kubectl apply -f ./deployment/nginx-controller.yaml &&
-# kubectl apply -f ./deployment/react-deployment.yaml
+kubectl apply -f ./deployment/log-deployment.yaml &&
+kubectl apply -f ./deployment/nginx-controller.yaml &&
+kubectl apply -f ./deployment/react-deployment.yaml
 
-# kubectl apply -f ./service/log-service.yaml &&
-# kubectl apply -f ./service/nginx-service.yaml &&
-# kubectl apply -f ./service/react-service.yaml
+kubectl apply -f ./service/log-service.yaml &&
+kubectl apply -f ./service/nginx-service.yaml &&
+kubectl apply -f ./service/react-service.yaml
 
-# kubectl apply -f ./ingress/ingress.yaml
+kubectl apply -f ./ingress/ingress.yaml

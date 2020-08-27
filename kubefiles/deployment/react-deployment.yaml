@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: kube
-          image: gauti019/kube-deploy:latest
+          image: gauti019/kube-deploy:87d500f695862c245cc95b842742aaf14abac209
           imagePullPolicy: Always
           ports:
             - containerPort: 3030
