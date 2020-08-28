@@ -63,7 +63,7 @@ jobs:
           version: "v3.3.0"
 
       - name: "Set latest container-image to use in helm chart"
-        run: "sed -i '$ d' ./ms1-chart/values.yaml  && echo commitId: ${{ github.sha }} >> ./ms1-chart/values.yaml && echo $commitId | base64"
+        run: "sed -i '$ d' ./kubefiles/ms1-chart/values.yaml  && echo commitId: ${{ github.sha }} >> ./kubefiles/ms1-chart/values.yaml && echo $commitId | base64"
 
       - name: K8s deploy stuff
         run: "./kubefiles/deploy-to-k8s.sh ${{ github.sha }}"
