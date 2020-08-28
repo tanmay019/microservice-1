@@ -14,11 +14,11 @@ containerPorts:
   log: 3099
 
 replicas:
-  react: 2
+  react: 1
   log: 1
 
 containerImage:
   react: gauti019/kube-deploy
   log: gauti019/logger-microservice
 
-commitId: 10acb48ab2889842c84fe743576597912434e3d5
+commitId: latest
