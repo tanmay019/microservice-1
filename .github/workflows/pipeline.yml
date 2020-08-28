@@ -23,8 +23,8 @@ jobs:
       - name: "Install Dependencies"
         run: npm ci
 
-      # - name: "Create Build Frontend"
-      #   run: npm run build
+      - name: "Create Build Frontend"
+        run: npm run build
 
       - name: Build and push to docker hub
         uses: docker/build-push-action@v1
@@ -62,8 +62,8 @@ jobs:
         with:
           version: "v3.3.0"
 
-      - name: K8s delete old services
-        run: "kubectl delete svc/react --ignore-not-found && kubectl delete deployment.apps/react-deploy --ignore-not-found"
+      - name: "Set latest container-image to use in helm chart"
+        run: "sed -i '$ d' ./ms2-chart/values.yaml  && echo commitId: ${{ github.sha }} >> ./ms2-chart/values.yaml && echo $commitId | base64"
 
       - name: K8s deploy stuff
         run: "./kubefiles/deploy-to-k8s.sh ${{ github.sha }}"
@@ -86,3 +86,43 @@ jobs:
   #       with:
   #         image-reference: "gauti019/kube-deploy:latest"
   #         fail-build: true
+
+
+
+
+
+
+
+
+# ---------------------------------------------------------------------
+      # - name: "Use Node.js 10.x"
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: "10.x"
+
+      # - name: Build and push to docker hub
+      #   uses: docker/build-push-action@v1
+      #   with:
+      #     username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+      #     password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+      #     repository: gauti019/logger-microservice
+      #     tags: ${{ github.sha }}
+
+      # - name: "Set latest container-image to use in helm chart"
+      #   run: "sed -i '$ d' ./ms2-chart/values.yaml  && echo commitId: ${{ github.sha }} >> ./ms2-chart/values.yaml"
+
+      # - name: Setup & install Google-Cloud-Platform
+      #   uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      #   with:
+      #     version: "290.0.1"
+      #     service_account_key: ${{ secrets.GCP_SA_KEY }}
+      #     export_default_credentials: true
+      # - run: "gcloud container clusters get-credentials my-first-cluster-2 --zone us-central1-c --project tranquil-apogee-287511"
+
+      # - name: Install Helm package manager
+      #   uses: azure/setup-helm@v1
+      #   with:
+      #     version: "v3.3.0"
+
+      # - name: K8s deploy stuff
+      #   run: "./deploy-to-k8s.sh"

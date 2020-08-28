@@ -33,6 +33,12 @@ const server = http.createServer(function (req, res) {
                                                                                                                  `;
 
   if (url.split('/')[1] === "react") {
+    if (url.split('/')[2] === "ui") {
+      const ui = fs.readFileSync(dir+index);
+      console.log("stats for index.js is: ",fs.statSync(dir+index));
+      res.writeHead(200);
+      return res.end(ui);  
+    }
     res.writeHead(200);
     return res.end(ms1);
   }

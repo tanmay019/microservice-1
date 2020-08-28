@@ -1,0 +1,24 @@
+# local/prod
+env: local
+
+servicePorts:
+  react: 80
+  log: 3099
+
+serviceType:
+  react: ClusterIP
+  log: ClusterIP
+
+containerPorts:
+  react: 3030
+  log: 3099
+
+replicas:
+  react: 2
+  log: 1
+
+containerImage:
+  react: gauti019/kube-deploy
+  log: gauti019/logger-microservice
+
+commitId: 95169463446aeb4fd00af3f0b811dbb157949a4d

@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: react
 spec:
-  type: ClusterIP
+  type: {{ .Values.serviceType.react }}
   selector:
     app: react
   ports:

@@ -4,7 +4,6 @@ metadata:
   name: react-deploy
   labels:
     app: react
-    helm.sh/chart: '{{ .Values.label }}'
 spec:
   replicas: 1
   selector:
