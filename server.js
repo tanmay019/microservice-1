@@ -50,6 +50,7 @@ const server = http.createServer(function (req, res) {
 
   res.writeHead(200);
   return res.end(e404);
+
 });
 
 server.listen(port);
