@@ -10,6 +10,7 @@ const dir = path.join(cwd, deployFolder);
 const index = "/index.html";
 
 const server = http.createServer(function (req, res) {
+
   let url = req.url;
 
   const ms1 = `
